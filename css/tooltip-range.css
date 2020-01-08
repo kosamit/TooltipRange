@@ -1,0 +1,119 @@
+/*!
+ * tooltip-range.css
+ *
+ * Copyright (c) 2020 kosamit
+ * Released under the MIT license.
+ * see https://opensource.org/licenses/MIT
+ *
+ */
+.tooltip-range {
+  position: relative;
+  height: 36px;
+}
+
+.tooltip-range input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  margin: 0;
+  background: #EEEEEE;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.tooltip-range-custom input[type='range'] {
+  position: relative;
+  z-index: 99;
+  opacity: 0;
+  height: 28px;
+  top: 5px;
+}
+
+.tooltip-range-custom .tooltip-range-tracker-bg,
+.tooltip-range-custom .tooltip-range-tracker-bg::after,
+.tooltip-range-custom .tooltip-range-tracker-bg::before {
+  position: absolute;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+}
+
+.tooltip-range-custom .tooltip-range-tracker-bg {
+  top: 14px;
+  width: 100%;
+  height: 10px;
+  background-color: #E6E6E6;
+  border-radius: 7px;
+}
+
+
+.tooltip-range-custom .tooltip-range-tracker-thumb,
+.tooltip-range-custom .tooltip-range-tracker-thumb::after {
+  position: absolute;
+  background-color: #7AD2CC;
+}
+
+.tooltip-range-custom .tooltip-range-tracker-thumb {
+  top: 14px;
+  left: 0;
+  width: 0;
+  height: 10px;
+  transition: width 150ms linear;
+  border-radius: 7px;
+}
+
+.tooltip-range-custom .tooltip-range-tracker-thumb::after {
+  content: '';
+  z-index: 2;
+  top: -10px;
+  right: -14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+}
+
+.tooltip-range .tooltip,
+.tooltip-range .tooltip::after,
+.tooltip-range .tooltip::before {
+  position: absolute;
+}
+
+.tooltip-range .tooltip {
+  z-index: 0;
+  top: -32px;
+  left: 0;
+  padding: 5px 12px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+  border-radius: 3px;
+  transition: left 100ms linear;
+  background: #7AD2CC;
+  color: #FFFFFF;
+}
+
+.tooltip-range .tooltip::after,
+.tooltip-range .tooltip::before {
+  content: '';
+  width: 0;
+  height: 0;
+}
+
+.tooltip-range .tooltip::after {
+  bottom: -4px;
+  left: calc(50% - 4px);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #7AD2CC;
+}
+
+.tooltip-range .tooltip::before {
+  bottom: -5px;
+  left: calc(50% - 5px);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #F1F1F1;
+}
+
